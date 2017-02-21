@@ -87,7 +87,8 @@ namespace ExtendedXmlSerialization
             string xml;
             using (var ms = new MemoryStream())
             {
-                using (XmlWriter xw = XmlWriter.Create(ms))
+				XmlWriterSettings settings = _toolsFactory?.XmlWriterSettings ?? new XmlWriterSettings();
+                using (XmlWriter xw = XmlWriter.Create(ms,settings))
                 {
                     WriteXml(xw, o, def);
                 }

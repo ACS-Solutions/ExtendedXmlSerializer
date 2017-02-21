@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Xml;
 
 namespace ExtendedXmlSerialization
 {
@@ -58,5 +59,7 @@ namespace ExtendedXmlSerialization
         }
 
         public IPropertyEncryption EncryptionAlgorithm { get; set; }
+
+        public XmlWriterSettings XmlWriterSettings { get; set; }
     }
 }
